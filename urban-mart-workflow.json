@@ -1,0 +1,1850 @@
+{
+  "name": "UrbanMart",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3168,
+        512
+      ],
+      "id": "34d05147-7185-4812-8780-0fb81a0070ff",
+      "name": "Try me"
+    },
+    {
+      "parameters": {
+        "jsCode": "const feedbackData = [\n  {\n    \"feedback_id\": \"F001\",\n    \"date\": \"2026-09-01\",\n    \"rating\": 2,\n    \"source\": \"Online Survey\",\n    \"feedback\": \"My order arrived four days later than the delivery date shown on the website.\"\n  },\n  {\n    \"feedback_id\": \"F002\",\n    \"date\": \"2026-09-01\",\n    \"rating\": 5,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"The staff at the store were very friendly and helped me find exactly what I needed.\"\n  },\n  {\n    \"feedback_id\": \"F003\",\n    \"date\": \"2026-09-01\",\n    \"rating\": 2,\n    \"source\": \"Online Survey\",\n    \"feedback\": \"Prices are higher than other stores for many of the same products.\"\n  },\n  {\n    \"feedback_id\": \"F004\",\n    \"date\": \"2026-09-01\",\n    \"rating\": 1,\n    \"source\": \"Website\",\n    \"feedback\": \"I received the wrong product and had to contact support twice before getting help.\"\n  },\n  {\n    \"feedback_id\": \"F005\",\n    \"date\": \"2026-09-02\",\n    \"rating\": 4,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"Good shopping experience and the checkout process was quick.\"\n  },\n  {\n    \"feedback_id\": \"F006\",\n    \"date\": \"2026-09-02\",\n    \"rating\": 2,\n    \"source\": \"Website\",\n    \"feedback\": \"Several items shown as available online were actually out of stock.\"\n  },\n  {\n    \"feedback_id\": \"F007\",\n    \"date\": \"2026-09-02\",\n    \"rating\": 1,\n    \"source\": \"Online Survey\",\n    \"feedback\": \"Delivery was promised in two days but took almost a week.\"\n  },\n  {\n    \"feedback_id\": \"F008\",\n    \"date\": \"2026-09-02\",\n    \"rating\": 5,\n    \"source\": \"Email Survey\",\n    \"feedback\": \"Customer service solved my problem quickly and professionally.\"\n  },\n  {\n    \"feedback_id\": \"F009\",\n    \"date\": \"2026-09-03\",\n    \"rating\": 3,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"The products are good but I think some prices could be more competitive.\"\n  },\n  {\n    \"feedback_id\": \"F010\",\n    \"date\": \"2026-09-03\",\n    \"rating\": 2,\n    \"source\": \"Website\",\n    \"feedback\": \"The mobile website becomes very slow when I try to checkout.\"\n  },\n  {\n    \"feedback_id\": \"F011\",\n    \"date\": \"2026-09-03\",\n    \"rating\": 1,\n    \"source\": \"Online Survey\",\n    \"feedback\": \"My package arrived damaged.\"\n  },\n  {\n    \"feedback_id\": \"F012\",\n    \"date\": \"2026-09-03\",\n    \"rating\": 5,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"Staff were polite and explained the product features clearly.\"\n  },\n  {\n    \"feedback_id\": \"F013\",\n    \"date\": \"2026-09-04\",\n    \"rating\": 2,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"I couldn't find many of the products I wanted because they were out of stock.\"\n  },\n  {\n    \"feedback_id\": \"F014\",\n    \"date\": \"2026-09-04\",\n    \"rating\": 2,\n    \"source\": \"Website\",\n    \"feedback\": \"Delivery tracking was not updated for three days.\"\n  },\n  {\n    \"feedback_id\": \"F015\",\n    \"date\": \"2026-09-04\",\n    \"rating\": 4,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"The store was clean and products were easy to find.\"\n  },\n  {\n    \"feedback_id\": \"F016\",\n    \"date\": \"2026-09-05\",\n    \"rating\": 1,\n    \"source\": \"Email Survey\",\n    \"feedback\": \"I paid for next-day delivery but received the order after four days.\"\n  },\n  {\n    \"feedback_id\": \"F017\",\n    \"date\": \"2026-09-05\",\n    \"rating\": 3,\n    \"source\": \"Online Survey\",\n    \"feedback\": \"Everything was okay. Nothing particularly good or bad.\"\n  },\n  {\n    \"feedback_id\": \"F018\",\n    \"date\": \"2026-09-05\",\n    \"rating\": 2,\n    \"source\": \"Website\",\n    \"feedback\": \"The checkout page crashed twice while I was trying to pay.\"\n  },\n  {\n    \"feedback_id\": \"F019\",\n    \"date\": \"2026-09-06\",\n    \"rating\": 5,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"One of your employees went out of their way to help me exchange a product.\"\n  },\n  {\n    \"feedback_id\": \"F020\",\n    \"date\": \"2026-09-06\",\n    \"rating\": 1,\n    \"source\": \"Online Survey\",\n    \"feedback\": \"The product stopped working after two days of use.\"\n  },\n  {\n    \"feedback_id\": \"F021\",\n    \"date\": \"2026-09-06\",\n    \"rating\": 2,\n    \"source\": \"Website\",\n    \"feedback\": \"Delivery is consistently slower than what is advertised.\"\n  },\n  {\n    \"feedback_id\": \"F022\",\n    \"date\": \"2026-09-07\",\n    \"rating\": 4,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"Good quality products, but more discounts would be nice.\"\n  },\n  {\n    \"feedback_id\": \"F023\",\n    \"date\": \"2026-09-07\",\n    \"rating\": 2,\n    \"source\": \"Email Survey\",\n    \"feedback\": \"The item I ordered was cancelled because it was apparently out of stock.\"\n  },\n  {\n    \"feedback_id\": \"F024\",\n    \"date\": \"2026-09-07\",\n    \"rating\": 5,\n    \"source\": \"Website\",\n    \"feedback\": \"Excellent support team. They responded within minutes.\"\n  },\n  {\n    \"feedback_id\": \"F025\",\n    \"date\": \"2026-09-08\",\n    \"rating\": 1,\n    \"source\": \"Mobile App\",\n    \"feedback\": \"The app froze after I added products to my cart.\"\n  },\n  {\n    \"feedback_id\": \"F026\",\n    \"date\": \"2026-09-08\",\n    \"rating\": 2,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"Some basic household products are noticeably more expensive here.\"\n  },\n  {\n    \"feedback_id\": \"F027\",\n    \"date\": \"2026-09-08\",\n    \"rating\": 4,\n    \"source\": \"Online Survey\",\n    \"feedback\": \"Delivery was on time and the product arrived in good condition.\"\n  },\n  {\n    \"feedback_id\": \"F028\",\n    \"date\": \"2026-09-09\",\n    \"rating\": 2,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"I had to wait too long at the billing counter even though there were only a few customers.\"\n  },\n  {\n    \"feedback_id\": \"F029\",\n    \"date\": \"2026-09-09\",\n    \"rating\": 5,\n    \"source\": \"Store Survey\",\n    \"feedback\": \"Very helpful employees and a pleasant store environment.\"\n  },\n  {\n    \"feedback_id\": \"F030\",\n    \"date\": \"2026-09-09\",\n    \"rating\": 3,\n    \"source\": \"Online Survey\",\n    \"feedback\": \"I like the store but would like to see more product options.\"\n  }\n\n];\n\nreturn feedbackData.map(item => ({\n  json: { ...item, channel: item.source, ingested_via: 'backfill_dataset' }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2944,
+        512
+      ],
+      "id": "78a329e9-d128-4fab-ba03-83691cd02de7",
+      "name": "Loading Sample Feedbacks"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"feedback_id\": {\n      \"type\": \"string\"\n    },\n    \"category\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"Delivery\",\n        \"Product Quality\",\n        \"Pricing\",\n        \"Product Availability\",\n        \"Customer Service\",\n        \"Staff Behaviour\",\n        \"Store Experience\",\n        \"Website / App\",\n        \"Other\"\n      ]\n    },\n    \"issue_tag\": {\n      \"type\": \"string\"\n    },\n    \"mixed_signal\": {\n      \"type\": \"boolean\"\n    },\n    \"secondary_category\": {\n      \"type\": \"string\"\n    },\n    \"secondary_note\": {\n      \"type\": \"string\"\n    },\n    \"sentiment\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"Positive\",\n        \"Neutral\",\n        \"Negative\"\n      ]\n    },\n    \"severity\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"Low\",\n        \"Medium\",\n        \"High\",\n        \"N/A\"\n      ]\n    },\n    \"confidence\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"high\",\n        \"medium\",\n        \"low\"\n      ]\n    },\n    \"evidence_quote\": {\n      \"type\": \"string\"\n    },\n    \"rationale\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"feedback_id\",\n    \"category\",\n    \"issue_tag\",\n    \"mixed_signal\",\n    \"sentiment\",\n    \"severity\",\n    \"confidence\",\n    \"evidence_quote\",\n    \"rationale\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1392,
+        976
+      ],
+      "id": "9a1a26ab-a110-4a68-b691-40b14c65ba9e",
+      "name": "Classification Output Schema"
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = $input.first().json.data;\n\nconst TREND_MIN_COUNT = 3;\n\nfunction bump(map, key) { if (key) map[key] = (map[key] || 0) + 1; }\n\nconst categoryCounts = {};\nconst issueTagCounts = {};\nconst sentimentCounts = { Positive: 0, Neutral: 0, Negative: 0 };\nconst severityCounts = { Low: 0, Medium: 0, High: 0 };\nconst categoryEvidence = {};\nconst issueTagEvidence = {};\nconst mixedOrUnclearRegister = [];\n\nfor (const r of rows) {\n  bump(categoryCounts, r.category);\n  bump(issueTagCounts, r.issue_tag);\n  bump(sentimentCounts, r.sentiment);\n  if (r.severity && r.severity !== 'N/A') bump(severityCounts, r.severity);\n\n  (categoryEvidence[r.category] ??= []).push({ feedback_id: r.feedback_id, evidence_quote: r.evidence_quote, sentiment: r.sentiment, severity: r.severity });\n  (issueTagEvidence[r.issue_tag] ??= []).push({ feedback_id: r.feedback_id, category: r.category, evidence_quote: r.evidence_quote, sentiment: r.sentiment });\n\n  if (r.mixed_signal || r.confidence === 'low' || r.category === 'Other') {\n    mixedOrUnclearRegister.push({\n      feedback_id: r.feedback_id,\n      category: r.category,\n      secondary_category: r.secondary_category || null,\n      secondary_note: r.secondary_note || null,\n      confidence: r.confidence,\n      rationale: r.rationale,\n      reason: r.mixed_signal ? 'mixed_signal' : (r.confidence === 'low' ? 'low_confidence' : 'uncategorised_other')\n    });\n  }\n}\n\nconst categoryTrends = Object.entries(categoryCounts).map(([category, count]) => ({\n  category, count, is_pattern: count >= TREND_MIN_COUNT, evidence: categoryEvidence[category]\n})).sort((a,b) => b.count - a.count);\n\nconst issueTagTrends = Object.entries(issueTagCounts).map(([issue_tag, count]) => ({\n  issue_tag, count, is_pattern: count >= TREND_MIN_COUNT, evidence: issueTagEvidence[issue_tag]\n})).sort((a,b) => b.count - a.count);\n\nreturn [{\n  json: {\n    run_timestamp: new Date().toISOString(),\n    total_feedback_analysed: rows.length,\n    trend_min_count_threshold: TREND_MIN_COUNT,\n    category_counts: categoryCounts,\n    issue_tag_counts: issueTagCounts,\n    sentiment_counts: sentimentCounts,\n    severity_counts: severityCounts,\n    category_trends: categoryTrends,\n    issue_tag_trends: issueTagTrends,\n    mixed_or_unclear_register: mixedOrUnclearRegister,\n    classified_feedback: rows\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -912,
+        512
+      ],
+      "id": "201103f3-3ba3-4206-bd64-aab4286dcf54",
+      "name": "Compute Evidence"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -1136,
+        512
+      ],
+      "id": "e3a96c7f-db31-4b52-80d0-0b7c20f8d344",
+      "name": "Combine Classified Feedbacks"
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nconst previousBaseline = staticData.urbanmart_baseline || { category_counts: {}, issue_tag_counts: {}, run_timestamp: null };\n\nreturn [{\n  json: {\n    ...$input.first().json,\n    previous_baseline: previousBaseline\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -688,
+        512
+      ],
+      "id": "aa0cbc57-ed7b-4000-99bf-d76d9d4bd697",
+      "name": "Load Previous Baseline"
+    },
+    {
+      "parameters": {
+        "jsCode": "const current = $input.first().json;\nconst prevCat = current.previous_baseline.category_counts || {};\nconst prevTag = current.previous_baseline.issue_tag_counts || {};\n\nfunction deltaFor(currentCounts, prevCounts) {\n  const keys = new Set([...Object.keys(currentCounts), ...Object.keys(prevCounts)]);\n  const out = [];\n  for (const k of keys) {\n    const now = currentCounts[k] || 0;\n    const before = prevCounts[k] || 0;\n    out.push({\n      key: k,\n      count_now: now,\n      count_before: before,\n      delta: now - before,\n      status: before === 0 && now > 0 ? 'new' : (now > before ? 'worsening' : (now < before ? 'improving' : 'unchanged'))\n    });\n  }\n  return out.sort((a,b) => Math.abs(b.delta) - Math.abs(a.delta));\n}\n\nconst category_delta = deltaFor(current.category_counts, prevCat);\nconst issue_tag_delta = deltaFor(current.issue_tag_counts, prevTag);\nconst has_prior_baseline = !!current.previous_baseline.run_timestamp;\n\nreturn [{\n  json: {\n    ...current,\n    has_prior_baseline,\n    category_delta,\n    issue_tag_delta\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -464,
+        512
+      ],
+      "id": "292d1777-f857-4497-9c64-69bcf0a13f71",
+      "name": "Compute Deltas vs Baseline"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"negative_patterns\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"label\": {\n            \"type\": \"string\"\n          },\n          \"count\": {\n            \"type\": \"integer\"\n          },\n          \"summary\": {\n            \"type\": \"string\"\n          },\n          \"evidence_feedback_ids\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"required\": [\n          \"label\",\n          \"count\",\n          \"summary\",\n          \"evidence_feedback_ids\"\n        ]\n      }\n    },\n    \"positive_patterns\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"label\": {\n            \"type\": \"string\"\n          },\n          \"count\": {\n            \"type\": \"integer\"\n          },\n          \"summary\": {\n            \"type\": \"string\"\n          },\n          \"evidence_feedback_ids\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"required\": [\n          \"label\",\n          \"count\",\n          \"summary\",\n          \"evidence_feedback_ids\"\n        ]\n      }\n    },\n    \"isolated_comments\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"label\": {\n            \"type\": \"string\"\n          },\n          \"count\": {\n            \"type\": \"integer\"\n          },\n          \"note\": {\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"label\",\n          \"count\",\n          \"note\"\n        ]\n      }\n    },\n    \"priority_concerns\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"label\": {\n            \"type\": \"string\"\n          },\n          \"priority\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"High\",\n              \"Medium\",\n              \"Low\"\n            ]\n          },\n          \"justification\": {\n            \"type\": \"string\"\n          },\n          \"evidence_feedback_ids\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"required\": [\n          \"label\",\n          \"priority\",\n          \"justification\",\n          \"evidence_feedback_ids\"\n        ]\n      }\n    },\n    \"change_since_last_run\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"negative_patterns\",\n    \"positive_patterns\",\n    \"isolated_comments\",\n    \"priority_concerns\",\n    \"change_since_last_run\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        368,
+        672
+      ],
+      "id": "4ffc1585-0e55-41e7-9c72-9aec10b2a367",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"emerging_issues\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"label\": {\n            \"type\": \"string\"\n          },\n          \"reason\": {\n            \"type\": \"string\"\n          },\n          \"evidence_feedback_ids\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"required\": [\n          \"label\",\n          \"reason\",\n          \"evidence_feedback_ids\"\n        ]\n      }\n    },\n    \"notable_single_incidents\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"feedback_id\": {\n            \"type\": \"string\"\n          },\n          \"category\": {\n            \"type\": \"string\"\n          },\n          \"severity\": {\n            \"type\": \"string\"\n          },\n          \"note\": {\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"feedback_id\",\n          \"category\",\n          \"severity\",\n          \"note\"\n        ]\n      }\n    },\n    \"unclear_feedback_summary\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"emerging_issues\",\n    \"notable_single_incidents\",\n    \"unclear_feedback_summary\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        384,
+        1440
+      ],
+      "id": "3ef32657-1c41-44df-8e8d-338c57569f05",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const trend = $('Agent 2 - Trend and Pattern Analyst').first().json.output || $('Agent 2 - Trend and Pattern Analyst').first().json;\nconst anomaly = $('Agent 3 - Emerging and Anomaly Agent').first().json.output || $('Agent 3 - Emerging and Anomaly Agent').first().json;\nconst evidence = $('Compute Deltas vs Baseline').first().json;\n\nreturn [{\n  json: {\n    trend_findings: trend,\n    anomaly_findings: anomaly,\n    total_feedback_analysed: evidence.total_feedback_analysed,\n    sentiment_counts: evidence.sentiment_counts,\n    severity_counts: evidence.severity_counts,\n    retry_note: $json.retry_note || null\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1072,
+        512
+      ],
+      "id": "eea522a7-aadd-4cbf-97f3-7a82526c27b0",
+      "name": "Merge Trend and Anomaly Insights"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"recommendations\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"related_label\": {\n            \"type\": \"string\"\n          },\n          \"issue_or_strength\": {\n            \"type\": \"string\"\n          },\n          \"evidence_feedback_ids\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          },\n          \"recommendation\": {\n            \"type\": \"string\"\n          },\n          \"expected_benefit\": {\n            \"type\": \"string\"\n          },\n          \"priority\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"High\",\n              \"Medium\",\n              \"Low\"\n            ]\n          },\n          \"requires_management_approval\": {\n            \"type\": \"boolean\"\n          }\n        },\n        \"required\": [\n          \"related_label\",\n          \"issue_or_strength\",\n          \"evidence_feedback_ids\",\n          \"recommendation\",\n          \"expected_benefit\",\n          \"priority\",\n          \"requires_management_approval\"\n        ]\n      }\n    }\n  },\n  \"required\": [\n    \"recommendations\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1728,
+        1216
+      ],
+      "id": "ec53797b-0199-4fbd-a652-c4a5670c9650",
+      "name": "Structured Output Parser2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const recOutput = $('Agent 4: Recommendation Agent').first().json.output || $('Agent 4: Recommendation Agent').first().json;\nconst evidence = $('Compute Deltas vs Baseline').first().json;\nconst realIds = new Set(evidence.classified_feedback.map(r => r.feedback_id));\n\nconst invalidCitations = [];\nfor (const rec of (recOutput.recommendations || [])) {\n  for (const id of (rec.evidence_feedback_ids || [])) {\n    if (!realIds.has(id)) invalidCitations.push({ recommendation: rec.recommendation, invalid_id: id });\n  }\n}\n\nreturn [{\n  json: {\n    recommendations: recOutput,\n    integrity_check_passed: invalidCitations.length === 0,\n    invalid_citations: invalidCitations\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1952,
+        512
+      ],
+      "id": "3feaaf44-a47c-4bb3-8e06-dd692b6d7407",
+      "name": "Evidence Integrity Check"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"passed\": {\n      \"type\": \"boolean\"\n    },\n    \"feedback_for_retry\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"passed\",\n    \"feedback_for_retry\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        2608,
+        1216
+      ],
+      "id": "0b30e7ff-0e12-4c7d-b23c-ab94aea49753",
+      "name": "Structured Output Parser3"
+    },
+    {
+      "parameters": {
+        "description": "Returns the exact UrbanMart category, sentiment, and severity reference definitions (Resource 2) as JSON, so labels stay consistent with the official list instead of relying on memory.",
+        "jsCode": "return JSON.stringify({\n  categories: {\n    \"Delivery\": \"Delivery time, tracking, delivery charges, damaged delivery, or delivery promises\",\n    \"Product Quality\": \"Damaged, defective, unreliable, or poor-quality products\",\n    \"Pricing\": \"Expensive products, discounts, affordability, or value for money\",\n    \"Product Availability\": \"Out-of-stock items, unavailable products, or limited selection\",\n    \"Customer Service\": \"Customer support, complaint handling, response times, and problem resolution\",\n    \"Staff Behaviour\": \"Helpfulness, professionalism, attitude, or behaviour of store employees\",\n    \"Store Experience\": \"Cleanliness, queues, billing counters, layout, or the physical shopping experience\",\n    \"Website / App\": \"Website errors, mobile app problems, checkout failures, speed, or usability\",\n    \"Other\": \"Feedback that does not clearly fit one of the available categories\"\n  },\n  sentiments: {\n    \"Positive\": \"The customer expresses satisfaction or a positive experience\",\n    \"Neutral\": \"The customer is neither clearly satisfied nor dissatisfied\",\n    \"Negative\": \"The customer expresses dissatisfaction, frustration, or a poor experience\"\n  },\n  severities: {\n    \"Low\": \"A minor issue with limited impact on the customer experience\",\n    \"Medium\": \"A meaningful issue that negatively affects the customer experience\",\n    \"High\": \"A serious issue, repeated failure, or problem with significant customer impact\"\n  }\n});\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        -1456,
+        -80
+      ],
+      "id": "e35aef0b-eb31-42f4-a59a-b6a780eac37d",
+      "name": "get_classification_reference"
+    },
+    {
+      "parameters": {
+        "jsCode": "const evidence = $('Compute Deltas vs Baseline').first().json;\nconst merged = $('Merge Trend and Anomaly Insights').first().json;\nconst check = $('Evidence Integrity Check').first().json;\nconst retryStatus = $('Check Retry Cap').first().json;\n\nreturn [{\n  json: {\n    report_date: new Date().toISOString().slice(0,10),\n    total_feedback_analysed: evidence.total_feedback_analysed,\n    sentiment_counts: evidence.sentiment_counts,\n    severity_counts: evidence.severity_counts,\n    mixed_or_unclear_register: evidence.mixed_or_unclear_register,\n    trend_findings: merged.trend_findings,\n    anomaly_findings: merged.anomaly_findings,\n    recommendations: check.recommendations,\n    guardrail_retry_used: retryStatus.retry_attempt > 0,\n    guardrail_validation_forced_through: retryStatus.validation_forced_through,\n    approval_status: 'PENDING_MANAGEMENT_REVIEW'\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3184,
+        416
+      ],
+      "id": "7f4c184b-2008-44c1-9988-74daecf334df",
+      "name": "Compile Management Report Data"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Compile the final management report from this data:\n\n{{ JSON.stringify($json, null, 2) }}",
+        "options": {
+          "systemMessage": "You are the REPORT WRITER AGENT (Agent 6) in UrbanMart's Multi-Agent Customer Feedback system. You produce the FINAL output management reads.\n\nSTRICT RULES:\n- Use ONLY the JSON payload you are given. Do not add any complaint, statistic, or recommendation not already present.\n- Do not approve, authorise, or imply any operational change has been made - every recommendation is a proposal awaiting management approval.\n- Structure: Overview, Positive Patterns, Recurring Issues / Priority Concerns, Emerging or Unusual Issues, Isolated / One-off Comments, Mixed or Unclear Feedback, Recommendations (with evidence), What Changed Since Last Run, Next Steps for Management.\n- Always show supporting feedback_ids or counts next to each claim.\n- If guardrail_retry_used is true, add one line noting the recommendations were revised once by an automated QA check before reaching this report.\n- If guardrail_validation_forced_through is true, add a clearly marked warning line (e.g. starting with \\\"⚠ Needs extra review:\\\") stating that automated QA still had unresolved concerns after one retry and this report proceeded anyway, so management should review the recommendations with extra scrutiny before approving.\n- Plain, management-friendly English, short headers, bullet points, no jargon.\n\nOutput well-formatted Markdown only."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        3632,
+        416
+      ],
+      "id": "bc89bff8-922f-4836-8f04-e3a6f5e2de89",
+      "name": "Agent 6 - Report Writer",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "const evidence = $('Compute Deltas vs Baseline').first().json;\nconst staticData = $getWorkflowStaticData('global');\n\nstaticData.urbanmart_baseline = {\n  category_counts: evidence.category_counts,\n  issue_tag_counts: evidence.issue_tag_counts,\n  run_timestamp: evidence.run_timestamp\n};\n\n// $json here is the Status-sheet row written by 'Record Status: APPROVED';\n// pull the actual approval response from the Gmail node instead.\nconst approval = $('Send Report for Management Approval').first().json;\n\nreturn [{\n  json: {\n    baseline_updated: true,\n    stored_run_timestamp: evidence.run_timestamp,\n    status_sheet_row: $json,\n    final_report: approval\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5280,
+        320
+      ],
+      "id": "11744e36-fdab-4587-9382-c566615600d0",
+      "name": "Update Baseline & Audit Log"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "8a3ef980-e9e7-44f7-99bd-6f1e7af701c8",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        4864,
+        416
+      ],
+      "id": "47802192-1fc2-4311-9f16-6fee85299b62",
+      "name": "Management Approved?"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "np03cs4s240225@heraldcollege.edu.np",
+        "subject": "Approval Required",
+        "message": "={{ $('Final Management Report').first().json.management_report_html }}",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "disapproveLabel": "Request Changes"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        4640,
+        416
+      ],
+      "id": "d175b35e-253e-4f0c-84af-3c40202337d5",
+      "name": "Send Report for Management Approval",
+      "webhookId": "5f15c9d8-50f7-4631-b560-4d0b54afbd4c",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "G3rm5XjEP4YLiYrE",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "47f76609-6ca3-449a-99db-cf9b616575e2",
+              "name": "management_report_html",
+              "value": "={{ $json.management_report_html }}",
+              "type": "string"
+            },
+            {
+              "id": "497f83d6-f791-415b-9876-62ab8d16a6f1",
+              "name": "approval_status",
+              "value": "PENDING_MANAGEMENT_REVIEW",
+              "type": "string"
+            },
+            {
+              "id": "cab5eabc-ceb7-4367-9cd0-bcecc88b73b0",
+              "name": "generated_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        4208,
+        416
+      ],
+      "id": "2ec0a2dd-7751-4afc-9c45-d88e2fb0616d",
+      "name": "Final Management Report"
+    },
+    {
+      "parameters": {
+        "jsCode": "// $json here is the Status-sheet row written by 'Record Status: CHANGES REQUESTED';\n// read the manager's response from the Gmail node.\nconst approval = $('Send Report for Management Approval').first().json;\n\nreturn [{\n  json: {\n    approval_status: 'CHANGES_REQUESTED_BY_MANAGEMENT',\n    reviewed_at: new Date().toISOString(),\n    reviewer_note: approval.text || approval.data?.text || 'See approval tool response',\n    status_sheet_row: $json,\n    final_report: approval\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5280,
+        512
+      ],
+      "id": "d8877740-adc0-4dd6-aa32-c07ee2e16048",
+      "name": "Log Rejection (Manual Follow-up)"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Feedback ID: {{ $json.feedback_id }}\nDate: {{ $json.date }}\nRating: {{ $json.rating }}\nSource/Channel: {{ $json.source }}\nCustomer Feedback: \"{{ $json.feedback }}\"",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the CLASSIFICATION AGENT (Agent 1) in a Multi-Agent Customer Feedback system for UrbanMart.\n\nYou receive ONE customer feedback comment at a time. Classify it using ONLY the reference labels below. Never invent new labels.\n\nFEEDBACK CATEGORIES (choose the closest match; a comment may have a primary and, if genuinely mixed, a secondary category):\n- Delivery: delivery time, tracking, delivery charges, damaged delivery, delivery promises\n- Product Quality: damaged, defective, unreliable, or poor-quality products\n- Pricing: expensive products, discounts, affordability, value for money\n- Product Availability: out-of-stock items, unavailable products, limited selection\n- Customer Service: customer support, complaint handling, response times, problem resolution\n- Staff Behaviour: helpfulness, professionalism, attitude, behaviour of store employees\n- Store Experience: cleanliness, queues, billing counters, layout, physical shopping experience\n- Website / App: website errors, mobile app problems, checkout failures, speed, usability\n- Other: does not clearly fit any category above\n\nSENTIMENT: Positive / Neutral / Negative (as per the reference definitions).\n\nSEVERITY (Low / Medium / High; use \"N/A\" for purely Positive/Neutral items):\n- Low: minor issue, limited impact\n- Medium: meaningful issue negatively affecting the customer experience\n- High: serious issue, repeated failure, or significant customer impact\n\nISSUE TAG (new, finer-grained than category): a short snake_case slug (2-4 words) naming the SPECIFIC issue, e.g. \"late_delivery\", \"damaged_in_transit\", \"checkout_crash\", \"item_out_of_stock\", \"friendly_staff\", \"long_billing_queue\". Two comments only share an issue_tag if they describe the same underlying problem or praise, even if worded differently. This lets the system tell apart different specific issues that happen to share a category (e.g. \"late_delivery\" vs \"delivery_tracking_not_updated\" are both Delivery but different issues).\n\nRULES:\n1. Base every judgement ONLY on the text of the feedback given to you. Never invent details not present in the comment.\n2. If a comment expresses BOTH a positive and a negative point, or clearly touches two categories, set \"mixed_signal\" to true, give a \"secondary_category\" and a short \"secondary_note\". Do not force a single label onto a genuinely mixed comment.\n3. If a comment is vague or does not give enough information to classify confidently, set \"category\" to \"Other\" or your best-supported guess, set \"confidence\" to \"low\", and explain why in \"rationale\". Do not guess a specific complaint that isn't stated.\n4. \"evidence_quote\" must be a short verbatim excerpt (under 12 words) copied directly from the feedback text.\n5. Always return the feedback_id you were given, unchanged.\n\nReturn ONLY the structured JSON specified by the output schema. No extra commentary."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1536,
+        528
+      ],
+      "id": "8ee93ea0-cd6e-4e81-873c-686d2da8b47b",
+      "name": "Agent 1 - Classification Agent",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Evidence base for this run:\n\n{{ JSON.stringify($json, null, 2) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the TREND & PATTERN ANALYST AGENT (Agent 2) in UrbanMart's Multi-Agent Customer Feedback system.\n\nYou receive pre-computed, deterministic counts, evidence, and (if available) a comparison against the previous run's baseline. You do NOT recompute counts yourself and must NOT contradict them.\n\nYOUR JOB:\n1. For every category_trend / issue_tag_trend where is_pattern is true, describe the recurring pattern with 2-4 example feedback_ids as evidence.\n2. For every trend where is_pattern is false, list it as an isolated_comment. One comment is one comment, never a trend.\n3. Call out genuinely POSITIVE patterns separately so good experiences are not lost next to complaints.\n4. If has_prior_baseline is true, use category_delta/issue_tag_delta to note what changed since the last run (worsening, improving, newly appeared) - this is the \"changing trend\" behaviour the system must support. If has_prior_baseline is false, state this is the first run and no delta is available yet.\n5. Identify PRIORITY CONCERNS based on severity_counts, pattern size, and negative sentiment - never invent urgency the data doesn't support.\n6. Never state a finding without citing feedback_ids. Never invent a complaint, count, or opinion not present in the data.\n\nReturn ONLY the structured JSON specified by the output schema."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        224,
+        192
+      ],
+      "id": "05540aa0-027e-429c-869c-c7f7d4213f78",
+      "name": "Agent 2 - Trend and Pattern Analyst",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 8000
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Evidence base for this run:\n\n{{ JSON.stringify($json, null, 2) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the EMERGING & ANOMALY ISSUE AGENT (Agent 3) in UrbanMart's Multi-Agent Customer Feedback system. You run IN PARALLEL with the Trend & Pattern Analyst on the same evidence base.\n\nYOUR JOB is narrower: find feedback that does NOT fit the established, recurring themes.\n1. From category_trends and issue_tag_trends, list any issue_tag or category with is_pattern=false that still deserves a flag because of high severity (even a single High-severity comment can be worth surfacing here, clearly labelled as a single incident, not a trend).\n2. From mixed_or_unclear_register, summarise anything that was hard to classify (category \"Other\", low confidence, or mixed signal) so it isn't silently lost.\n3. If category_delta/issue_tag_delta shows a status of \"new\" (present now, absent from the previous baseline), call it out explicitly as a newly emerging issue.\n4. Do NOT restate the main recurring patterns - that is the Trend Analyst's job. Focus only on the unusual, the new, and the edge cases.\n5. Never invent a complaint that is not present in the data.\n\nReturn ONLY the structured JSON specified by the output schema."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        240,
+        848
+      ],
+      "id": "2940882e-8194-4726-a9ce-08c12a299742",
+      "name": "Agent 3 - Emerging and Anomaly Agent",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "description": "Given a feedback_id (e.g. F014), returns that record's original date, rating, source, and full comment text from this run's dataset, so an agent can double-check evidence before citing it.",
+        "jsCode": "const id = (query || '').trim().toUpperCase();\nconst rows = $('Compute Deltas vs Baseline').first().json.classified_feedback || [];\nconst found = rows.find(r => r.feedback_id === id);\nif (!found) {\n  return `No feedback found with id \"${id}\". Valid ids look like F001-F030 for the sample dataset, or channel-specific ids for live feedback.`;\n}\nreturn JSON.stringify(found);"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        320,
+        528
+      ],
+      "id": "1a5a9335-95f0-4583-af21-634997b7bd28",
+      "name": "lookup_feedback_by_id"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Findings to base recommendations on:\n\n{{ JSON.stringify($json, null, 2) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the BUSINESS RECOMMENDATION AGENT (Agent 4) in UrbanMart's Multi-Agent Customer Feedback system.\n\nUrbanMart BUSINESS CONTEXT (Resource 3 - use this to judge what is practical):\n- Business: physical retail stores + online shopping platform\n- Delivery promise: standard orders normally delivered within 2-3 working days\n- Customer service goal: initial response to issues within 24 hours\n- Management priority: improve customer satisfaction and encourage repeat purchases\n- Improvement approach: PRACTICAL improvements that do not require major infrastructure investment first\n- Decision authority: AI may RECOMMEND only. Management must APPROVE any actual operational change. Never phrase a recommendation as already decided.\n\nYou receive the combined Trend Analyst + Anomaly Agent findings, already evidence-backed.\n\nYOUR JOB:\n1. For each priority concern, significant negative pattern, and each notable emerging/anomaly issue, propose one practical recommendation.\n2. Every recommendation must cite the evidence it is based on (label, count, feedback_ids).\n3. Every recommendation must fit the business context above - no first-step recommendation that requires major infrastructure investment.\n4. Propose at least one recommendation that reinforces a positive pattern.\n5. Set \"requires_management_approval\" to true on every item and use suggestion language (\"Consider...\", \"Recommend...\").\n6. If this input includes a \"retry_note\" (a prior validation failure), correct the specific problem it describes before returning your answer.\n\nReturn ONLY the structured JSON specified by the output schema."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1584,
+        512
+      ],
+      "id": "ae3344f2-19ca-4e62-9515-eb497a17c430",
+      "name": "Agent 4: Recommendation Agent",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 8000
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ JSON.stringify($json, null, 2) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are the GUARDRAIL / QA AGENT (Agent 5) in UrbanMart's Multi-Agent Customer Feedback system. You are the last check before a report reaches management.\n\nA deterministic integrity check has already confirmed whether every cited feedback_id is real (see integrity_check_passed / invalid_citations). Your job is the qualitative check on top of that:\n\n1. Does every recommendation actually follow from its cited evidence (no leap beyond what the feedback supports)?\n2. Does every recommendation respect UrbanMart's business context (practical, no major infrastructure investment implied as a first step)?\n3. Does every recommendation use suggestion language and keep requires_management_approval true (never phrased as already decided)?\n4. Is any complaint, statistic, or customer opinion present that is NOT traceable to the evidence given?\n\nIf integrity_check_passed is false, you must fail validation regardless of anything else.\n\nReturn \"passed\": true only if all checks pass. If false, return a concise \"feedback_for_retry\" string describing exactly what must be fixed - this will be sent back to the Recommendation Agent."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        2464,
+        512
+      ],
+      "id": "d3b23617-6bf2-4b0f-98e3-4ba15d1dc13f",
+      "name": "Agent 5: Guardrail / QA + retry loop",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 8000
+    },
+    {
+      "parameters": {
+        "description": "Returns UrbanMart's business context (Resource 3): delivery promise, customer service goal, management priorities, and the practical/low-infrastructure improvement approach. Use before proposing any recommendation to check it fits the business.",
+        "jsCode": "return JSON.stringify({\n  business: \"UrbanMart operates physical retail stores and an online shopping platform\",\n  main_customer_channels: \"Physical stores, website, mobile app, online surveys, and email\",\n  delivery_promise: \"Standard orders are normally delivered within 2 to 3 working days\",\n  customer_service_goal: \"Customer issues should receive an initial response within 24 hours\",\n  management_priority: \"Improve customer satisfaction and encourage repeat purchases\",\n  improvement_approach: \"Management prefers practical improvements that can initially be implemented without major infrastructure investment\",\n  decision_authority: \"AI can analyse information and recommend improvements, but management must approve operational changes\"\n});\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        1664,
+        -64
+      ],
+      "id": "135cfa9e-49d4-4f0d-a95d-48d6b9b6e4a0",
+      "name": "get_business_context"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "624101db-f99a-4652-984a-dae025aaff11",
+              "leftValue": "={{ $json.should_proceed }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2960,
+        512
+      ],
+      "id": "24f67e7b-1395-441e-8781-695f21275385",
+      "name": "Passed Validation?"
+    },
+    {
+      "parameters": {
+        "jsCode": "const attempt = ($json.retry_attempt || 0) + 1;\nconst guardrail = $('Agent 5: Guardrail / QA + retry loop').first().json.output || $('Agent 5: Guardrail / QA + retry loop').first().json;\nconst merged = $('Merge Trend and Anomaly Insights').first().json;\n\nreturn [{\n  json: {\n    ...merged,\n    retry_attempt: attempt,\n    retry_note: guardrail.feedback_for_retry\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3184,
+        608
+      ],
+      "id": "ed917dab-a5a9-4700-81e0-92245c3f954f",
+      "name": "Prepare Retry (Max 1x)"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1776,
+        528
+      ],
+      "id": "1b3dce1c-abc4-4b0c-ad84-36ba300338f0",
+      "name": "Rate Limit Pacing (Wait 5s)",
+      "webhookId": "7ed8e038-1bc5-4611-b4c3-425f2ae41b34"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.5-flash-lite",
+        "options": {
+          "maxOutputTokens": 2048
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -1536,
+        1104
+      ],
+      "id": "ba5af9ee-8749-4b58-aa4b-3c88c3bb549b",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "vUkqqhoUnoJRq1He",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        400
+      ],
+      "id": "3ad19db5-d12c-45ce-880f-0cbdbdb42ca4",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "vUkqqhoUnoJRq1He",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        1040
+      ],
+      "id": "7ee18d64-3de1-4531-a1e1-f1d44bae331c",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "vUkqqhoUnoJRq1He",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        1584,
+        1040
+      ],
+      "id": "8de617aa-051e-406f-b804-3a07fba351ce",
+      "name": "Google Gemini Chat Model3",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "vUkqqhoUnoJRq1He",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        2464,
+        1024
+      ],
+      "id": "6c87cd11-e23e-4877-96d5-ed18c68b9f4d",
+      "name": "Google Gemini Chat Model4",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "vUkqqhoUnoJRq1He",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        3632,
+        624
+      ],
+      "id": "d02d6f98-f378-41bc-a5df-d0492a661f1b",
+      "name": "Google Gemini Chat Model5",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "vUkqqhoUnoJRq1He",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -224,
+        512
+      ],
+      "id": "c4898a31-599a-4c47-8f6a-38c5b470df07",
+      "name": "Rate Limit Pacing (Wait 5s) - Before Agent 2 & 3",
+      "webhookId": "a1a1a1a1-0001-4a00-9000-000000000001"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1344,
+        512
+      ],
+      "id": "36a4e1c4-724b-4318-9c38-139cd308a43f",
+      "name": "Rate Limit Pacing (Wait 5s) - Before Agent 4",
+      "webhookId": "a1a1a1a1-0002-4a00-9000-000000000002"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3184,
+        768
+      ],
+      "id": "a11268ea-cba1-41ec-987c-418156647c72",
+      "name": "Rate Limit Pacing (Wait 5s) - Before Agent 4 Retry",
+      "webhookId": "a1a1a1a1-0003-4a00-9000-000000000003"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2208,
+        512
+      ],
+      "id": "9fe186d3-b624-43fd-ae07-a7efb5971c5d",
+      "name": "Rate Limit Pacing (Wait 5s) - Before Agent 5",
+      "webhookId": "a1a1a1a1-0004-4a00-9000-000000000004"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3408,
+        416
+      ],
+      "id": "642e828f-6b2c-4c3f-a20f-3cb0bb6a0ffe",
+      "name": "Rate Limit Pacing (Wait 5s) - Before Agent 6",
+      "webhookId": "a1a1a1a1-0005-4a00-9000-000000000005"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pull the guardrail's verdict for THIS pass\nconst guardrail = $('Agent 5: Guardrail / QA + retry loop').first().json.output || $('Agent 5: Guardrail / QA + retry loop').first().json;\n\n// Reliably read how many retries have already happened. We look this up from the\n// 'Prepare Retry (Max 1x)' node directly (rather than relying on retry_attempt riding along\n// through item json), because AI Agent nodes replace their item's json with just their own\n// output and silently drop custom fields like retry_attempt along the way.\nlet retryAttempt = 0;\ntry {\n  const prep = $('Prepare Retry (Max 1x)').first();\n  retryAttempt = (prep && prep.json && prep.json.retry_attempt) || 0;\n} catch (e) {\n  retryAttempt = 0; // node hasn't run yet in this execution - this is the first attempt\n}\n\nconst MAX_RETRIES = 1;\nconst passed = !!guardrail.passed;\nconst retriesExhausted = retryAttempt >= MAX_RETRIES;\n\nreturn [{\n  json: {\n    passed,\n    feedback_for_retry: guardrail.feedback_for_retry || null,\n    retry_attempt: retryAttempt,\n    retries_exhausted: retriesExhausted,\n    should_proceed: passed || retriesExhausted,\n    validation_forced_through: !passed && retriesExhausted\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2768,
+        512
+      ],
+      "id": "568d9433-77e4-4445-9761-5d924304a9b7",
+      "name": "Check Retry Cap"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -2112,
+        512
+      ],
+      "id": "79e554da-533e-4bf6-b247-adaa29b0e9f7",
+      "name": "Classify One Feedback at a Time (Loop)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Reset the per-run accumulator that will collect Agent 1's classified output,\n// one item at a time, as the loop below processes them individually for rate-limit pacing.\nconst staticData = $getWorkflowStaticData('global');\nstaticData.urbanmart_classified_accumulator = [];\nreturn $input.all();\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2368,
+        512
+      ],
+      "id": "47364fad-772e-47de-ad73-d03cb15b71d3",
+      "name": "Reset Classification Accumulator"
+    },
+    {
+      "parameters": {
+        "jsCode": "// The loop node's 'done' output only replays whatever it originally received -\n// it does NOT automatically collect the classified results we produced during looping.\n// So we push each classified item into workflow static data here, right after Agent 1 runs,\n// and read the full collected list back out once the loop finishes.\nconst staticData = $getWorkflowStaticData('global');\nconst classified = $json.output || $json;\nstaticData.urbanmart_classified_accumulator = staticData.urbanmart_classified_accumulator || [];\nstaticData.urbanmart_classified_accumulator.push(classified);\nreturn [{ json: { _looped: true } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1072,
+        736
+      ],
+      "id": "f7fe9d1d-4e0e-4ed7-9364-03502f295019",
+      "name": "Accumulate Classified Result"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop is finished - pull out every classified item collected along the way and\n// re-expand them into individual n8n items, exactly the shape 'Combine Classified\n// Feedbacks' (Aggregate node) expects.\nconst staticData = $getWorkflowStaticData('global');\nconst rows = staticData.urbanmart_classified_accumulator || [];\nreturn rows.map(r => ({ json: r }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1520,
+        256
+      ],
+      "id": "afa5208d-945f-446c-ae0c-7f6b730b18e6",
+      "name": "Collect Classified Results"
+    },
+    {
+      "parameters": {
+        "jsCode": "const md = $json.output || '';\n\nfunction escapeHtml(s) {\n  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\n}\n\nfunction inline(text) {\n  let t = escapeHtml(text);\n  // bold\n  t = t.replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>');\n  // italic (single asterisk, not part of a bullet marker)\n  t = t.replace(/(^|[^*])\\*([^*\\n]+)\\*(?!\\*)/g, '$1<em>$2</em>');\n  return t;\n}\n\nconst lines = md.split('\\n');\nlet html = '';\nlet inList = null; // 'ul' | 'ol' | null\nlet paragraphBuffer = [];\n\nfunction flushParagraph() {\n  if (paragraphBuffer.length) {\n    html += `<p style=\"margin:0 0 12px 0; line-height:1.55; color:#2b2b2b;\">${paragraphBuffer.join(' ')}</p>`;\n    paragraphBuffer = [];\n  }\n}\nfunction closeList() {\n  if (inList) {\n    html += `</${inList}>`;\n    inList = null;\n  }\n}\n\nfor (const rawLine of lines) {\n  const line = rawLine.trim();\n\n  if (line === '') {\n    flushParagraph();\n    closeList();\n    continue;\n  }\n\n  // Warning callout line\n  if (line.startsWith('⚠')) {\n    flushParagraph();\n    closeList();\n    html += `<div style=\"background:#fff4e5; border-left:4px solid #d97706; padding:12px 16px; margin:16px 0; border-radius:4px; color:#7c4a03; font-weight:600;\">${inline(line)}</div>`;\n    continue;\n  }\n\n  // Horizontal rule\n  if (/^-{3,}$/.test(line)) {\n    flushParagraph();\n    closeList();\n    html += '<hr style=\"border:none; border-top:1px solid #e2e2e2; margin:20px 0;\">';\n    continue;\n  }\n\n  // Headers\n  let m = line.match(/^(#{1,4})\\s+(.*)$/);\n  if (m) {\n    flushParagraph();\n    closeList();\n    const level = m[1].length;\n    const sizes = { 1: '22px', 2: '19px', 3: '16px', 4: '14px' };\n    const colors = { 1: '#1a1a1a', 2: '#1a1a1a', 3: '#333333', 4: '#444444' };\n    html += `<h${Math.min(level + 1, 4)} style=\"font-size:${sizes[level] || '14px'}; color:${colors[level] || '#333'}; margin:22px 0 10px 0; font-family:Arial,Helvetica,sans-serif;\">${inline(m[2])}</h${Math.min(level + 1, 4)}>`;\n    continue;\n  }\n\n  // Bullet list\n  m = line.match(/^[-*]\\s+(.*)$/);\n  if (m) {\n    flushParagraph();\n    if (inList !== 'ul') { closeList(); html += '<ul style=\"margin:0 0 12px 0; padding-left:22px;\">'; inList = 'ul'; }\n    html += `<li style=\"margin-bottom:6px; line-height:1.5; color:#2b2b2b;\">${inline(m[1])}</li>`;\n    continue;\n  }\n\n  // Numbered list\n  m = line.match(/^\\d+\\.\\s+(.*)$/);\n  if (m) {\n    flushParagraph();\n    if (inList !== 'ol') { closeList(); html += '<ol style=\"margin:0 0 12px 0; padding-left:22px;\">'; inList = 'ol'; }\n    html += `<li style=\"margin-bottom:6px; line-height:1.5; color:#2b2b2b;\">${inline(m[1])}</li>`;\n    continue;\n  }\n\n  // Otherwise: part of a paragraph\n  closeList();\n  paragraphBuffer.push(inline(line));\n}\nflushParagraph();\ncloseList();\n\nconst wrapped = `\n<div style=\"font-family:Arial,Helvetica,sans-serif; max-width:680px; margin:0 auto; padding:24px; color:#2b2b2b;\">\n  <div style=\"border-bottom:2px solid #1a1a1a; padding-bottom:12px; margin-bottom:20px;\">\n    <h1 style=\"font-size:22px; margin:0; color:#1a1a1a;\">UrbanMart Customer Feedback Report</h1>\n  </div>\n  ${html}\n</div>\n`.trim();\n\nreturn [{ json: { management_report_html: wrapped } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3968,
+        416
+      ],
+      "id": "925d21a8-f36b-41f4-8924-0c461b79c3bf",
+      "name": "Convert Report to HTML"
+    },
+    {
+      "parameters": {
+        "description": "Given a feedback_id (e.g. F014), returns that record's original date, rating, source, and full comment text from this run's dataset, so an agent can double-check evidence before citing it.",
+        "jsCode": "const id = (query || '').trim().toUpperCase();\nconst rows = $('Compute Deltas vs Baseline').first().json.classified_feedback || [];\nconst found = rows.find(r => r.feedback_id === id);\nif (!found) {\n  return `No feedback found with id \"${id}\". Valid ids look like F001-F030 for the sample dataset, or channel-specific ids for live feedback.`;\n}\nreturn JSON.stringify(found);"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        336,
+        1216
+      ],
+      "id": "e6dfce58-7fd6-4cf9-84ba-f0c951f50f17",
+      "name": "lookup_feedback_by_id (Agent 3)"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/180ytKErYrrnOZud52i1u2LrumuEZ0uuQfS_28_woZZQ/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Feedbacks",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/180ytKErYrrnOZud52i1u2LrumuEZ0uuQfS_28_woZZQ/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3184,
+        752
+      ],
+      "id": "7d7f01e9-7463-41d2-965f-a4e988457db9",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "bf3P075pPQCbWdQq",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all().map(({ json: r }) => ({\n  json: {\n    feedback_id: r.feedback_id || `SUR-${r.row_number || Date.now()}`,\n    date: new Date(r.date || r.Timestamp || Date.now()).toISOString().slice(0, 10),\n    rating: Number(r.rating || r.Rating) || null,\n    source: r.source || r.Source || 'Store Survey',\n    feedback: r.feedback || r.Feedback || r.comment || '',\n    channel: 'survey_sheet',\n    ingested_via: 'sheet_trigger'\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2944,
+        752
+      ],
+      "id": "c8e79f05-5651-4d07-801c-4511b87abf4e",
+      "name": "Normalize Survey Sheet Row"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -2592,
+        512
+      ],
+      "id": "b73ec31b-b005-42e3-be5f-f6430e6923d0",
+      "name": "Unified Feedback Intake"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        800,
+        512
+      ],
+      "id": "5703d3eb-b3ef-4b9a-bf53-e70670dbb903",
+      "name": "Wait for Agents 2 & 3"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/180ytKErYrrnOZud52i1u2LrumuEZ0uuQfS_28_woZZQ/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Status",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "run_id ": "={{ $execution.id }}",
+            " run_timestamp": "={{ $('Compute Deltas vs Baseline').first().json.run_timestamp }}",
+            " total_feedback": "={{ $('Compute Deltas vs Baseline').first().json.total_feedback_analysed }}",
+            " status ": "PENDING"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "run_id ",
+              "displayName": "run_id ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " run_timestamp",
+              "displayName": " run_timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " total_feedback",
+              "displayName": " total_feedback",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " status ",
+              "displayName": " status ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " reviewed_at",
+              "displayName": " reviewed_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reviewer_note",
+              "displayName": "reviewer_note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        4432,
+        416
+      ],
+      "id": "4353a8d3-112d-4460-ab83-223ff59d67dc",
+      "name": "Record Status: PENDING",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5b5Xz58NnQVDwnG",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/180ytKErYrrnOZud52i1u2LrumuEZ0uuQfS_28_woZZQ/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Status",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "run_id ": "={{ $execution.id }}",
+            " reviewed_at": "={{ $now.toISO() }}",
+            " status ": "APPROVED"
+          },
+          "matchingColumns": [
+            "run_id "
+          ],
+          "schema": [
+            {
+              "id": "run_id ",
+              "displayName": "run_id ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " run_timestamp",
+              "displayName": " run_timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " total_feedback",
+              "displayName": " total_feedback",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " status ",
+              "displayName": " status ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " reviewed_at",
+              "displayName": " reviewed_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reviewer_note",
+              "displayName": "reviewer_note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        5056,
+        320
+      ],
+      "id": "afc01f01-29bb-45e7-875e-aed68c0a2b7f",
+      "name": "Record Status: APPROVED",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5b5Xz58NnQVDwnG",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/180ytKErYrrnOZud52i1u2LrumuEZ0uuQfS_28_woZZQ/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Status",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "reviewer_note": "={{ $json.data?.text || '' }}",
+            " reviewed_at": "={{ $now.toISO() }}",
+            "run_id ": "={{ $execution.id }}",
+            " status ": "CHANGES REQUESTED"
+          },
+          "matchingColumns": [
+            "run_id "
+          ],
+          "schema": [
+            {
+              "id": "run_id ",
+              "displayName": "run_id ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " run_timestamp",
+              "displayName": " run_timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " total_feedback",
+              "displayName": " total_feedback",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " status ",
+              "displayName": " status ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": " reviewed_at",
+              "displayName": " reviewed_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reviewer_note",
+              "displayName": "reviewer_note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        5056,
+        512
+      ],
+      "id": "91fd632e-bb9e-4d46-8492-2fc54a86ff38",
+      "name": "Record Status: CHANGES REQUESTED",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5b5Xz58NnQVDwnG",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Try me": {
+      "main": [
+        [
+          {
+            "node": "Loading Sample Feedbacks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loading Sample Feedbacks": {
+      "main": [
+        [
+          {
+            "node": "Unified Feedback Intake",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classification Output Schema": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agent 1 - Classification Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Classified Feedbacks": {
+      "main": [
+        [
+          {
+            "node": "Compute Evidence",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute Evidence": {
+      "main": [
+        [
+          {
+            "node": "Load Previous Baseline",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Previous Baseline": {
+      "main": [
+        [
+          {
+            "node": "Compute Deltas vs Baseline",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute Deltas vs Baseline": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit Pacing (Wait 5s) - Before Agent 2 & 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agent 2 - Trend and Pattern Analyst",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agent 3 - Emerging and Anomaly Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Trend and Anomaly Insights": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit Pacing (Wait 5s) - Before Agent 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agent 4: Recommendation Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evidence Integrity Check": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit Pacing (Wait 5s) - Before Agent 5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser3": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agent 5: Guardrail / QA + retry loop",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_classification_reference": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent 1 - Classification Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Agent 5: Guardrail / QA + retry loop",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compile Management Report Data": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit Pacing (Wait 5s) - Before Agent 6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 6 - Report Writer": {
+      "main": [
+        [
+          {
+            "node": "Convert Report to HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Management Approved?": {
+      "main": [
+        [
+          {
+            "node": "Record Status: APPROVED",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Record Status: CHANGES REQUESTED",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Status: APPROVED": {
+      "main": [
+        [
+          {
+            "node": "Update Baseline & Audit Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Status: CHANGES REQUESTED": {
+      "main": [
+        [
+          {
+            "node": "Log Rejection (Manual Follow-up)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Report for Management Approval": {
+      "main": [
+        [
+          {
+            "node": "Management Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final Management Report": {
+      "main": [
+        [
+          {
+            "node": "Record Status: PENDING",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Status: PENDING": {
+      "main": [
+        [
+          {
+            "node": "Send Report for Management Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 1 - Classification Agent": {
+      "main": [
+        [
+          {
+            "node": "Accumulate Classified Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 2 - Trend and Pattern Analyst": {
+      "main": [
+        [
+          {
+            "node": "Wait for Agents 2 & 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 3 - Emerging and Anomaly Agent": {
+      "main": [
+        [
+          {
+            "node": "Wait for Agents 2 & 3",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "lookup_feedback_by_id": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent 2 - Trend and Pattern Analyst",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 4: Recommendation Agent": {
+      "main": [
+        [
+          {
+            "node": "Evidence Integrity Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 5: Guardrail / QA + retry loop": {
+      "main": [
+        [
+          {
+            "node": "Check Retry Cap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_business_context": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent 4: Recommendation Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Agent 5: Guardrail / QA + retry loop",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Passed Validation?": {
+      "main": [
+        [
+          {
+            "node": "Compile Management Report Data",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare Retry (Max 1x)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Retry (Max 1x)": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit Pacing (Wait 5s) - Before Agent 4 Retry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit Pacing (Wait 5s)": {
+      "main": [
+        [
+          {
+            "node": "Agent 1 - Classification Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agent 1 - Classification Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agent 2 - Trend and Pattern Analyst",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agent 3 - Emerging and Anomaly Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agent 4: Recommendation Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agent 5: Guardrail / QA + retry loop",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agent 6 - Report Writer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit Pacing (Wait 5s) - Before Agent 2 & 3": {
+      "main": [
+        [
+          {
+            "node": "Agent 2 - Trend and Pattern Analyst",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Agent 3 - Emerging and Anomaly Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit Pacing (Wait 5s) - Before Agent 4": {
+      "main": [
+        [
+          {
+            "node": "Agent 4: Recommendation Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit Pacing (Wait 5s) - Before Agent 4 Retry": {
+      "main": [
+        [
+          {
+            "node": "Agent 4: Recommendation Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit Pacing (Wait 5s) - Before Agent 5": {
+      "main": [
+        [
+          {
+            "node": "Agent 5: Guardrail / QA + retry loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit Pacing (Wait 5s) - Before Agent 6": {
+      "main": [
+        [
+          {
+            "node": "Agent 6 - Report Writer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Retry Cap": {
+      "main": [
+        [
+          {
+            "node": "Passed Validation?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify One Feedback at a Time (Loop)": {
+      "main": [
+        [
+          {
+            "node": "Collect Classified Results",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rate Limit Pacing (Wait 5s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reset Classification Accumulator": {
+      "main": [
+        [
+          {
+            "node": "Classify One Feedback at a Time (Loop)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect Classified Results": {
+      "main": [
+        [
+          {
+            "node": "Combine Classified Feedbacks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Accumulate Classified Result": {
+      "main": [
+        [
+          {
+            "node": "Classify One Feedback at a Time (Loop)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Report to HTML": {
+      "main": [
+        [
+          {
+            "node": "Final Management Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lookup_feedback_by_id (Agent 3)": {
+      "ai_tool": [
+        [
+          {
+            "node": "Agent 3 - Emerging and Anomaly Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Normalize Survey Sheet Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Survey Sheet Row": {
+      "main": [
+        [
+          {
+            "node": "Unified Feedback Intake",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Unified Feedback Intake": {
+      "main": [
+        [
+          {
+            "node": "Reset Classification Accumulator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Agents 2 & 3": {
+      "main": [
+        [
+          {
+            "node": "Merge Trend and Anomaly Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "f728fdbb-4546-4936-aae6-68113b973c8a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ac11b56e5323a1988e4029154596535062e2078e39c0fae4c823b5da460f886c"
+  },
+  "nodeGroups": [],
+  "id": "XoTW9GPBcOP38Rdt",
+  "tags": []
+}
